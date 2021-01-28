@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintExample"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/north_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="North"
+        app:layout_constraintBottom_toTopOf="@+id/center_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/west_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="West"
+        app:layout_constraintBottom_toTopOf="@+id/south_button"
+        app:layout_constraintEnd_toStartOf="@+id/center_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/north_button" />
+
+    <Button
+        android:id="@+id/center_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/east_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:text="East"
+        app:layout_constraintBottom_toTopOf="@+id/south_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/center_button"
+        app:layout_constraintTop_toBottomOf="@+id/north_button" />
+
+    <Button
+        android:id="@+id/south_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="South"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/center_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

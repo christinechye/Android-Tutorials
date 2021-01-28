@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/north_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:text="North" />
+    <Button
+        android:id="@+id/nw_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/center_button"
+        android:layout_toLeftOf="@+id/north_button"
+        android:text="NW" />
+    <Button
+        android:id="@+id/ne_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/center_button"
+        android:layout_toRightOf="@+id/north_button"
+        android:text="NE" />
+    <Button
+        android:id="@+id/west_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:text="West" />
+
+    <Button
+        android:id="@+id/center_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Center" />
+    <Button
+        android:id="@+id/east_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="300dp"
+        android:text="East" />
+    <Button
+        android:id="@+id/sw_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/center_button"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@+id/south_button"
+        android:text="SW" />
+    <Button
+        android:id="@+id/se_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/center_button"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/south_button"
+        android:text="SE" />
+    <Button
+        android:id="@+id/south_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/center_button"
+        android:layout_marginTop="150dp"
+        android:text="South" />
+
+</RelativeLayout>
