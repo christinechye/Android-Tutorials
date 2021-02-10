@@ -60,7 +60,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onRestart();
         Log.i(TAG, "On restart");
     }
-    protected void onDestory() {
+    protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "On destroy");
     }
