@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009688"
+    android:backgroundTint="#009688">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#E91E63"
+        android:text="NAME" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toEndOf="@+id/name"
+        android:background="#E91E63"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter your name" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="20dp"
+        android:background="#2196F3"
+        android:text="PASSWORD" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/editName"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/password"
+        android:background="#2196F3"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter your password" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="#A18C8C"
+        android:text="SUBMIT" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:text="OR" />
+
+    <ImageButton
+        android:id="@+id/google"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@+id/or"
+        android:layout_toStartOf="@+id/or"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:tint="#00FFFFFF"
+        app:srcCompat="@drawable/gicon" />
+
+    <ImageButton
+        android:id="@+id/facebook"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@+id/or"
+        android:layout_toEndOf="@+id/google"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:tint="#00FFFFFF"
+        app:srcCompat="@drawable/fbicon" />
+
+    <ImageButton
+        android:id="@+id/twitter"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@+id/or"
+        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/facebook"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ticon" />
+
+
+</RelativeLayout>
