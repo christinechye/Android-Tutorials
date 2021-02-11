@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Single List Item Design -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#56E91E63">
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/img"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"></ImageView>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img"
+        android:padding="10dip"
+        android:textSize="24dip"
+        android:textStyle="bold"></TextView>
+
+</RelativeLayout>
