@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "courses.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,15 +17,20 @@ public class DBHelper extends SQLiteOpenHelper {
     // create table
     private static final String CREATE_TABLE = "CREATE TABLE " + CourseInfoContact.Course.TABLE_NAME + "(" + CourseInfoContact.Course._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             CourseInfoContact.Course.COURSE_NAME + " TEXT NOT NULL, " + CourseInfoContact.Course.PROF_NAME  + ")";
+    // delete table
+    private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+ CourseInfoContact.Course.TABLE_NAME;
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //drop existing tables
+        db.execSQL(DROP_TABLE);
+        //start over
+        onCreate(db);
     }
 }

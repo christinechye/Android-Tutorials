@@ -16,36 +16,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_add"
-        android:text="ADD COURSE" />
+        android:hint="Course name"
+        android:inputType="textPersonName"/>
     <EditText
         android:id="@+id/et_prof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_course"
-        android:text="ADD COURSE" />
+        android:hint="Professor Name"
+        android:inputType="textPersonName"/>
     <Button
         android:id="@+id/bt_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_prof"
+        android:onClick="add"
         android:text="ADD"/>
     <Button
         android:id="@+id/bt_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_add"
+        android:onClick="show"
         android:text="SHOW ALL"/>
     <Button
         android:id="@+id/bt_searchName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_show"
-        android:text="SEARCH BY NAME"/>
+        android:onClick="search_name"
+        android:text="SEARCH BY COURSE NAME"/>
     <Button
         android:id="@+id/bt_searchCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_searchName"
-        android:text="SEARCH BY COURSE #"/>
+        android:onClick="search_course"
+        android:text="SEARCH BY PROFESSOR NAME"/>
 
 </RelativeLayout>

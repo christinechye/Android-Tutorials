@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+    public void add (View view) {
         // initialize UI layout
         btn_add = findViewById(R.id.bt_add);
         btn_show = findViewById(R.id.bt_show);
@@ -33,71 +35,57 @@ public class MainActivity extends AppCompatActivity {
         et_course = findViewById(R.id.et_course);
         et_prof = findViewById(R.id.et_prof);
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String courseNum = et_course.getText().toString();
-                String profName = et_prof.getText().toString();
-                if (courseNum.isEmpty() || profName.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Error! Course and Professor name cannot be empty", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                // add record to database
-                DBHelper dBHelper_ = new DBHelper(MainActivity.this);
+        String courseNum = et_course.getText().toString();
+        String profName = et_prof.getText().toString();
+        if (courseNum.isEmpty() || profName.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Error! Course and Professor name cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // add record to database
+        DBHelper dBHelper_ = new DBHelper(MainActivity.this);
 
-                // get data repo in write mode
-                SQLiteDatabase db = dBHelper_.getWritableDatabase();
+        // get data repo in write mode
+        SQLiteDatabase db = dBHelper_.getWritableDatabase();
 
-                // create object
-                ContentValues contentValues = new ContentValues();
+        // create object
+        ContentValues contentValues = new ContentValues();
 
-                // method to insert
-                contentValues.put(CourseInfoContact.Course.COURSE_NAME, courseNum);
-                contentValues.put(CourseInfoContact.Course.PROF_NAME, profName);
+        // method to insert
+        contentValues.put(CourseInfoContact.Course.COURSE_NAME, courseNum);
+        contentValues.put(CourseInfoContact.Course.PROF_NAME, profName);
 
-                // insert new table
-                long recordId = db.insert(CourseInfoContact.Course.TABLE_NAME,null, contentValues);
+        // insert new table
+        long recordId = db.insert(CourseInfoContact.Course.TABLE_NAME,null, contentValues);
 
-                // close db connection
-                db.close();
+        // close db connection
+        db.close();
 
-                // check whether insertion is successful or not
-                int duration = Toast.LENGTH_SHORT;
-                if (recordId == -1) {
-                    Toast.makeText(MainActivity.this, "Failed to insert!", Toast.LENGTH_SHORT).show();
+        // check whether insertion is successful or not
+        int duration = Toast.LENGTH_SHORT;
+        if (recordId == -1) {
+            Toast.makeText(MainActivity.this, "Failed to insert!", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "Successfully inserted!", Toast.LENGTH_SHORT).show();
-                }
-                // clear fields
-                et_course.setText("");
-                et_prof.setText("");
-            }
-        });
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Successfully inserted!", Toast.LENGTH_SHORT).show();
+        }
+        // clear fields
+        et_course.setText("");
+        et_prof.setText("");
+    }
 
-        btn_show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-            }
-        });
+    public void show (View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
+    }
 
-        btn_searchName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-                startActivity(intent);
-            }
-        });
+    public void search_name (View view) {
+        Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+        startActivity(intent);
+    }
 
-        btn_searchCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FourthActivity.class);
-                startActivity(intent);
-            }
-        });
+    public void search_course (View view) {
+        Intent intent = new Intent(MainActivity.this, FourthActivity.class);
+        startActivity(intent);
     }
 }

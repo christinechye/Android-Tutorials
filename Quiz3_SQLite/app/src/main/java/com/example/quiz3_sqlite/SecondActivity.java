@@ -14,6 +14,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        tv_all_info = findViewById(R.id.tv_all_course_info);
 
         // instantiate/access database
         DBHelper dbHelper_ = new DBHelper(SecondActivity.this);
