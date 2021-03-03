@@ -64,7 +64,7 @@ public class ThirdActivity extends AppCompatActivity {
                 if (result.isEmpty()) {
                     Toast.makeText(ThirdActivity.this, "No matches", Toast.LENGTH_SHORT).show();
                 }
-
+                Toast.makeText(ThirdActivity.this, "Matched! Result: " + result, Toast.LENGTH_SHORT).show();
                 // display results
                 tv_result.setText(result);
 
