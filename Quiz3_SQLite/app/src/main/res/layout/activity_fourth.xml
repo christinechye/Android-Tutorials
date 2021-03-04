@@ -31,4 +31,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_delete_"
+        android:layout_below="@+id/tv_res_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE"/>
+
 </RelativeLayout>
