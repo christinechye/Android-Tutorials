@@ -22,8 +22,8 @@ public class SecondActivity extends AppCompatActivity {
         // get data repo in read mode
         SQLiteDatabase db = dbHelper_.getReadableDatabase();
 
-        // query method
-        Cursor cursor = db.query(CourseInfoContact.Course.TABLE_NAME, null, null, null, null, null, CourseInfoContact.Course.COURSE_NAME);
+        // query method in alphabetical order
+        Cursor cursor = db.rawQuery("SELECT * FROM " + CourseInfoContact.Course.TABLE_NAME + " ORDER BY " + CourseInfoContact.Course.COURSE_NAME, null);
 
         // retrieve data from the query result (cursor returns obj)
         String result = "";

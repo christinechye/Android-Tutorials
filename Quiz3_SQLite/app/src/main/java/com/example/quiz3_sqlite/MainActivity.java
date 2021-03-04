@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -37,15 +38,29 @@ public class MainActivity extends AppCompatActivity {
 
         String courseNum = et_course.getText().toString();
         String profName = et_prof.getText().toString();
+
+        // if fields are empty
         if (courseNum.isEmpty() || profName.isEmpty()) {
             Toast.makeText(MainActivity.this, "Error! Course and Professor name cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
+
         // add record to database
         DBHelper dBHelper_ = new DBHelper(MainActivity.this);
 
         // get data repo in write mode
         SQLiteDatabase db = dBHelper_.getWritableDatabase();
+
+        // if there are duplicates
+        Cursor cur = db.query(CourseInfoContact.Course.TABLE_NAME, null, "COURSE_NAME = ? AND PROF_NAME = ?", new String[] {courseNum, profName}, null, null, null, null);
+        if (cur != null && cur.getCount() > 0) {
+            // duplicate found
+            Toast.makeText(MainActivity.this, "Error! Duplicate record!", Toast.LENGTH_SHORT).show();
+            // clear fields
+            et_course.setText("");
+            et_prof.setText("");
+            return;
+        }
 
         // create object
         ContentValues contentValues = new ContentValues();

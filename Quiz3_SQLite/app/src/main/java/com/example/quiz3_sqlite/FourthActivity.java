@@ -54,7 +54,7 @@ public class FourthActivity extends AppCompatActivity {
                     String id_ = cursor.getString(cursor.getColumnIndex(CourseInfoContact.Course.COURSE_NAME));
                     String name_ = cursor.getString(cursor.getColumnIndex(CourseInfoContact.Course.PROF_NAME));
                     //append this record to result
-                    result = result + " "+ id_ + " " + name_;
+                    result = result + "\n\n "+ id_ + " " + name_;
                 }
 
                 // close db connection
@@ -64,7 +64,7 @@ public class FourthActivity extends AppCompatActivity {
                 if (result.isEmpty()) {
                     Toast.makeText(FourthActivity.this, "No matches", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(FourthActivity.this, "Matched! Result: " + result, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FourthActivity.this, "Matched! Result: " + result, Toast.LENGTH_SHORT).show();
                 // display results
                 tv_result.setText(result);
             }
